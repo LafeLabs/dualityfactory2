@@ -25,7 +25,7 @@ EGO DEATH:
     <a href = "text2php.php">text2php.php</a>
     <a href = "index.php">index.php</a>
     <a href = "copy.php">copy.php</a>
-    <a href = "linker.php">linker.php</a>
+    <a href = "combiner.php">combiner.php</a>
     <a href = "aligner.php">aligner.php</a>
     <a href = "uploader.php">uploader.php</a>
     <a href = "linkfeed.php">linkfeed.php</a>
@@ -59,9 +59,6 @@ EGO DEATH:
     <div class = "php file">php/map2link.txt</div>
 
     <div class = "php file">php/copy.txt</div>
-
-    <div class = "php file">symbol/replicator.php</div>
-    <div class = "php file">curve/replicator.php</div>
 
     <div class = "json file">json/dna.txt</div>
     <div class = "json file">json/map.txt</div>

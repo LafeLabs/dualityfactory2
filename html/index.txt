@@ -21,16 +21,7 @@
                 <img src = "mapicons/imagefeed.svg"/>
             </a>
         </td>
-        <td>
-            <a href = "curve/">
-                <img src = "mapicons/curve.svg"/>
-            </a>
-        </td>
-        <td>
-            <a href = "symbol/">
-                <img src = "mapicons/geometron.svg"/>
-            </a>
-        </td>
+
         <td>
             <a id = "linkerlink" href = "combiner.php">
                 <img src = "mapicons/combiner2.svg"/>
@@ -43,12 +34,12 @@
         </td>
         <td>
             <a id = "mapeditorlink" href = "mapeditor.php">
-                <img src = "mapicons/mapeditor.svg"/>
+                <img src = "mapicons/dualityeditor.svg"/>
             </a>
         </td>
         <td>
             <a href = "map2link.php">
-                <img src = "mapicons/map2link.svg"/>
+                <img src = "mapicons/duality2link.svg"/>
             </a>
         </td>
         <td>
