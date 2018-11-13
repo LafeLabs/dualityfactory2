@@ -3,17 +3,15 @@
 		"path":"php",
 		"files":[
 			"aligner.txt",
+			"combiner.txt",
 			"copy.txt",
 			"dnagenerator.txt",
+			"dualityfeed.txt",
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
 			"imagefeed.txt",
 			"index.txt",
-			"linker.txt",
-			"linkfeed.txt",
-			"map2link.txt",
-			"mapeditor.txt",
 			"replicator.txt",
 			"text2php.txt",
 			"upload.txt",
@@ -31,24 +29,27 @@
 		"files":[
 			"currentjson.txt",
 			"dna.txt",
-			"factory.txt",
-			"imgurls.txt",
-			"links.txt",
-			"listoflists.txt",
-			"map.txt"
+			"duality.txt",
+			"imgurls.txt"
 		]
 	},
 	{
 		"path":"mapicons",
 		"files":[
 			"aligner.svg",
+			"aligner2.svg",
 			"back.svg",
 			"combiner.svg",
+			"combiner2.svg",
 			"copy.svg",
 			"curve.svg",
 			"deletelink.svg",
 			"deletex.svg",
 			"downarrow.svg",
+			"duality2link.svg",
+			"dualityeditor.svg",
+			"dualityfactory.svg",
+			"dualityfeed.svg",
 			"editor.svg",
 			"fwd.svg",
 			"geometron.svg",
@@ -59,50 +60,11 @@
 			"map2link.svg",
 			"mapeditor.svg",
 			"mapfactory.svg",
+			"saveduality.svg",
 			"scroll.svg",
 			"uparrow.svg",
 			"upload.svg",
 			"uploader.svg"
 		]
-	},
-	{
-		"path":"icons",
-		"files":[
-			"aligner.svg",
-			"back.svg",
-			"combiner.svg",
-			"deletelink.svg",
-			"deletex.svg",
-			"downarrow.svg",
-			"editor.svg",
-			"fwd.svg",
-			"gobutton.svg",
-			"image.svg",
-			"linker.svg",
-			"linkfeed.svg",
-			"map2link.svg",
-			"mapeditor.svg",
-			"mapfactory.svg",
-			"uparrow.svg",
-			"upload.svg"
-		]
-	},
-    {
-        "path":"symbol",
-        "files":[
-            "replicator.php"
-        ]
-    },
-    {
-        "path":"curve",
-        "files":[
-            "replicator.php"
-        ]
-    },
-    {
-        "path":"scroll",
-        "files":[
-            "replicator.php"
-        ]
-    }
+	}
 ]

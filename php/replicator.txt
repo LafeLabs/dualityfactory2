@@ -1,14 +1,11 @@
 <?php
 
-    $url = "https://raw.githubusercontent.com/LafeLabs/mapfactory3/master/json/dna.txt";
+    $url = "https://raw.githubusercontent.com/LafeLabs/dualityfactory2/master/json/dna.txt";
     $dnaraw = file_get_contents($url);
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];
 
-    mkdir("maps");
-    mkdir("symbol");
-    mkdir("scroll");
-    mkdir("curve");
+    mkdir("dualities");
     mkdir("uploadimages");
 
     //sources

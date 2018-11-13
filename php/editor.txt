@@ -52,17 +52,13 @@ EGO DEATH:
     <div class = "php file">php/upload.txt</div>
     <div class = "php file">php/combiner.txt</div>
     <div class = "php file">php/aligner.txt</div>
-    <div class = "php file">php/mapeditor.txt</div>
-    <div class = "php file">php/map2link.txt</div>
 
     <div class = "php file">php/dualityfeed.txt</div>
 
     <div class = "php file">php/copy.txt</div>
 
     <div class = "json file">json/dna.txt</div>
-    <div class = "json file">json/map.txt</div>
     <div class = "json file">json/duality.txt</div>
-    <div class = "json file">json/listoflists.txt</div>
     <div class = "json file">json/imgurls.txt</div>
 
 </div>
