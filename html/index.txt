@@ -7,11 +7,6 @@
             </a>
         </td>
         <td>
-            <a href = "index.php?url=json/factory.txt">
-                <img src = "mapicons/mapfactory.svg"/>
-            </a>
-        </td>
-        <td>
             <a href = "uploader.php">
                 <img src = "mapicons/uploader.svg"/>
             </a>
@@ -51,13 +46,14 @@
 </table>
 </div>
 <script>
+theta = 0;
 
 linkimages = document.getElementById("linktable").getElementsByTagName("img");
 for(var index = 0;index < linkimages.length;index++){
     linkimages[index].style.width = (innerWidth/16).toString() + "px";
 }
 
-    map = JSON.parse(document.getElementById("datadiv").innerHTML);
+    duality = JSON.parse(document.getElementById("datadiv").innerHTML);
     url = document.getElementById("urldiv").innerHTML;
     path = document.getElementById("pathdiv").innerHTML;
     if(path.length > 1){
@@ -74,15 +70,15 @@ for(var index = 0;index < linkimages.length;index++){
     }
     
     if(urlset && !pathset){
-        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        data = encodeURIComponent(JSON.stringify(duality,null,"    "));
         var httpc = new XMLHttpRequest();
         var url = "filesaver.php";
         httpc.open("POST", url, true);
         httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        httpc.send("data=" + data + "&filename=" + "json/map.txt");//send text to filesaver.php
+        httpc.send("data=" + data + "&filename=" + "json/duality.txt");//send text to filesaver.php
     }
     if(urlset && pathset){
-        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        data = encodeURIComponent(JSON.stringify(duality,null,"    "));
         var httpc = new XMLHttpRequest();
         var url = "filesaver.php";
         httpc.open("POST", url, true);
@@ -95,25 +91,37 @@ for(var index = 0;index < linkimages.length;index++){
         document.getElementById("mapeditorlink").href += "?path=" + path; 
     }
     
-    for(var index = 0;index < map.length;index++){
+    W = innerWidth;
+    for(var index = 0;index < duality.length;index++){
         var newimg = document.createElement("IMG");
-        var newa = document.createElement("A");
-        newa.className = "linkbox";
-        newa.appendChild(newimg);
-        newa.id = "a" + index.toString();
-        newa.href = map[index].href;
         newimg.id = "i" + index.toString();
-        document.getElementById("page").appendChild(newa);
-        newimg.src = map[index].src;
-        newa.style.left = (map[index].x*innerWidth).toString() + "px";
-        newa.style.top = (map[index].y*innerWidth).toString() + "px";
-        newa.style.width = (map[index].w*innerWidth).toString() + "px";
-        newa.style.transform = "rotate(" + map[index].angle.toString() + "deg)";
-        newimg.onload = function(){
-            this.parentElement.style.height = (this.height).toString() + "px";
-        }
+        newimg.className = "boximg";
+        document.getElementById("page").appendChild(newimg);
+        newimg.src = duality[index].src;
+        newimg.style.left = (duality[index].x*W).toString() + "px";
+        newimg.style.top = (duality[index].y*W).toString() + "px";
+        newimg.style.width = (duality[index].w*W).toString() + "px";
+        newimg.style.transform = "rotate(" + duality[index].angle.toString() + "deg)";
     }
+
+boxes = document.getElementById("page").getElementsByClassName("boximg");
+mc = new Hammer(document.getElementById("page"));
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+
+    theta = (ev.deltaX/200);
+    redraw();
+
+});    
+
+
+redraw();
     
+function redraw(){
+    boxes[0].style.opacity = Math.cos(theta)*Math.cos(theta).toString();
+    boxes[1].style.opacity = Math.sin(theta)*Math.sin(theta).toString();
+    
+}
 </script>
 <style>
 #linktable{
@@ -131,14 +139,10 @@ for(var index = 0;index < linkimages.length;index++){
     top:0px;
     right:0px;
     bottom:0px;
+    z-index:2;
 }
-.linkbox{
+.boximg{
     position:absolute;
 }
-.linkbox img{
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:100%;
-}
+
 </style>

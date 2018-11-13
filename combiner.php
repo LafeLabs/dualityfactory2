@@ -4,7 +4,8 @@
 <meta charset="utf-8"> 
 <title>Combiner</title>
 
-<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiIiIiIiIiIgERAAERAAERABEQABEQABEAAREAAREAASIiIiIiIiIiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIiIiIiIiIiAREAAREAAREAERAAERAAEQABEQABEQABIiIiIiIiIiL//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAC++wAAnnkAAI44AACeeQAAvvsAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rel="icon" type="image/x-icon" />
+<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAP//AP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAREAAREAAREAERAAERAAEQABEQABEQABAAAAAAAAAAAAAAAAAAAAAAAAACIiAAAAAAAiIiIiAAAAAiAAIiIgAAAAAAACIiAAAAAAAAIiIAAAACIAIgAgAAAAIgAiACAAAAAAACIiIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA/D8AAPAPAADgBwAAwAMAAMADAADAAwAAwAMAAMADAADAAwAA4AcAAPAPAAD8PwAA" rel="icon" type="image/x-icon" />
+
 
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
@@ -23,64 +24,12 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
         echo file_get_contents($_GET['path']);
     }
     else{
-        echo file_get_contents("json/map.txt");        
+        echo file_get_contents("json/duality.txt");        
     }
 ?></div>
 <div id = "imgurls" style = "display:none;"><?php
 
     echo file_get_contents("json/imgurls.txt");
-    
-?></div>
-<div id = "mapicons" style = "display:none;"><?php
-
-$files = scandir(getcwd()."/mapicons");
-$listtext = "";
-foreach($files as $value){
-    if($value != "." && $value != ".."){
-        $listtext .= $value.",";
-    }
-}
-echo $listtext;
-    
-?></div>
-<div id = "symbols" style = "display:none;"><?php
-
-$files = scandir(getcwd()."/symbol/svg");
-$listtext = "";
-foreach($files as $value){
-    if(substr($value,-4) == ".svg"){
-        $listtext .= "symbol/svg/".$value.",";
-    }
-}
-echo $listtext;
-
-
-$dirs = scandir(getcwd()."/symbol/symbols");
-foreach($dirs as $symboldir){
-    if($symboldir != "." && $symboldir != ".."){
-        $files = scandir(getcwd()."/symbol/symbols/".$symboldir."/svg");
-        $listtext = "";
-        foreach($files as $value){
-            if(substr($value,-4) == ".svg"){
-                $listtext .= "symbol/symbols/".$symboldir."/svg/".$value.",";
-            }
-        }
-        echo $listtext;
-    }
-}
-
-
-?></div>
-<div id = "curves" style = "display:none;"><?php
-
-$files = scandir(getcwd()."/curve/svg");
-$listtext = "";
-foreach($files as $value){
-    if(substr($value,-4) == ".svg"){
-        $listtext .= $value.",";
-    }
-}
-echo $listtext;
     
 ?></div>
 <div id = "uploadimages" style = "display:none;"><?php
@@ -95,7 +44,7 @@ foreach($files as $value){
 echo $listtext;
     
 ?></div>
-<a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/mapfactory.svg" style = "width:50px"></a>
+<a id = "factorylink" href = "index.php" style = "position:absolute;left:10px;top:10px"><img src = "mapicons/dualityfactory.svg" style = "width:50px"></a>
         <div id = "savebutton"><img style = "position:absolute;right:0px;top:0px;width:100px" class = "button" src = "mapicons/gobutton.svg"/></div>
         
 <table id = "maintable">
@@ -149,30 +98,20 @@ echo $listtext;
     
 
     imgurls = JSON.parse(document.getElementById("imgurls").innerHTML);
-    map = JSON.parse(document.getElementById("datadiv").innerHTML);
-    mapicons = document.getElementById("mapicons").innerHTML.split(",");
-    
+    duality = JSON.parse(document.getElementById("datadiv").innerHTML);
+
+    document.getElementById("bottomimage").src = duality[0].src;
+    document.getElementById("topimage").src = duality[1].src;
+    document.getElementById("bottominput").value = duality[0].src;
+    document.getElementById("topinput").value = duality[1].src;
+
     uploadimages = document.getElementById("uploadimages").innerHTML.split(",");
     for(var index = 0;index < uploadimages.length - 1;index++){
         imgurls.push("uploadimages/" + uploadimages[index]);
     }
     
-    symbols = document.getElementById("symbols").innerHTML.split(",");
-    for(var index = 0;index < symbols.length - 1;index++){
-        imgurls.push(symbols[index]);
-    }
-    curves = document.getElementById("curves").innerHTML.split(",");
-    for(var index = 0;index < curves.length - 1;index++){
-        imgurls.push("curve/svg/" + curves[index]);
-    }
-    for(var index = 0;index < mapicons.length - 1;index++){
-        imgurls.push("mapicons/" + mapicons[index]);
-    }
-    
 
 
-    
-    
     for(var index = 0;index < imgurls.length; index++){
         var newimg = document.createElement("IMG");
         newimg.src = imgurls[index];
@@ -181,7 +120,6 @@ echo $listtext;
         newimg.onclick = function(){
             mainimages[layerIndex].src = this.src;
             maininputs[layerIndex].value = this.src;
-
         }
     }
     
@@ -191,7 +129,7 @@ echo $listtext;
             currentFile = path;
         }
         else{
-            currentFile = "json/map.txt";
+            currentFile = "json/duality.txt";
         }
         
         topimage = {};
@@ -206,11 +144,11 @@ echo $listtext;
         bottomimage.y = 0.2;
         bottomimage.w = 0.5;
         bottomimage.angle = 0;
-        map =[];
-        map.push(bottomimage);
-        map.push(topimage);
+        duality =[];
+        duality.push(bottomimage);
+        duality.push(topimage);
         
-        data = encodeURIComponent(JSON.stringify(map,null,"    "));
+        data = encodeURIComponent(JSON.stringify(duality,null,"    "));
         var httpc = new XMLHttpRequest();
         var url = "filesaver.php";        
         httpc.open("POST", url, true);

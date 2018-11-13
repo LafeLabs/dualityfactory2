@@ -1,0 +1,16 @@
+[
+    {
+        "src": "http://actiongeometry.org/memefactory/uploadimages/image11.png",
+        "w": 0.45321637426900585,
+        "y": 0.06549707602339183,
+        "x": 0.18538011695906434,
+        "angle": 0
+    },
+    {
+        "src": "http://actiongeometry.org/memefactory/uploadimages/image12.png",
+        "w": 0.02046783625730994,
+        "y": 0.2972222222222223,
+        "x": 0.2811403508771931,
+        "angle": 0
+    }
+]

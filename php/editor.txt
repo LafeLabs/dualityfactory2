@@ -28,7 +28,6 @@ EGO DEATH:
     <a href = "combiner.php">combiner.php</a>
     <a href = "aligner.php">aligner.php</a>
     <a href = "uploader.php">uploader.php</a>
-    <a href = "linkfeed.php">linkfeed.php</a>
     <a href = "imagefeed.php">imagefeed.php</a>
     <a href = "mapeditor.php">mapeditor.php</a>
     <a href = "map2link.php">map2link.php</a>
@@ -48,11 +47,9 @@ EGO DEATH:
     <div class = "php file">php/text2php.txt</div>
     <div class = "php file">php/dnagenerator.txt</div>
 
-    <div class = "php file">php/linkfeed.txt</div>
     <div class = "php file">php/imagefeed.txt</div>
     <div class = "php file">php/uploader.txt</div>
     <div class = "php file">php/upload.txt</div>
-    <div class = "php file">php/linker.txt</div>
     <div class = "php file">php/combiner.txt</div>
     <div class = "php file">php/aligner.txt</div>
     <div class = "php file">php/mapeditor.txt</div>
@@ -62,8 +59,7 @@ EGO DEATH:
 
     <div class = "json file">json/dna.txt</div>
     <div class = "json file">json/map.txt</div>
-    <div class = "json file">json/factory.txt</div>
-    <div class = "json file">json/links.txt</div>
+    <div class = "json file">json/duality.txt</div>
     <div class = "json file">json/listoflists.txt</div>
     <div class = "json file">json/imgurls.txt</div>
 
