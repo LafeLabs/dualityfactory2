@@ -1,0 +1,16 @@
+[
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Vladimir_Putin_31_December_1999-3.jpg",
+        "x": 0.19926900584795323,
+        "y": 0.06403508771929826,
+        "w": 0.5,
+        "angle": 0
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg",
+        "x": 0.19926900584795323,
+        "y": 0.015058479532163759,
+        "w": 0.5029239766081871,
+        "angle": 0
+    }
+]

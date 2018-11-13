@@ -28,13 +28,8 @@
             </a>
         </td>
         <td>
-            <a id = "mapeditorlink" href = "mapeditor.php">
-                <img src = "mapicons/dualityeditor.svg"/>
-            </a>
-        </td>
-        <td>
-            <a href = "map2link.php">
-                <img src = "mapicons/duality2link.svg"/>
+            <a href = "dualityfeed.php">
+                <img src = "mapicons/dualityfeed.svg"/>
             </a>
         </td>
         <td>
@@ -46,7 +41,7 @@
 </table>
 </div>
 <script>
-theta = 0;
+theta = Math.PI/4;
 
 linkimages = document.getElementById("linktable").getElementsByTagName("img");
 for(var index = 0;index < linkimages.length;index++){
@@ -88,7 +83,6 @@ for(var index = 0;index < linkimages.length;index++){
     if(pathset){
         document.getElementById("linkerlink").href += "?path=" + path; 
         document.getElementById("alignerlink").href += "?path=" + path; 
-        document.getElementById("mapeditorlink").href += "?path=" + path; 
     }
     
     W = innerWidth;
@@ -109,7 +103,7 @@ mc = new Hammer(document.getElementById("page"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc.on("panleft panright panup pandown tap press", function(ev) {
 
-    theta = (ev.deltaX/200);
+    theta = Math.PI/4 +(ev.deltaX/200);
     redraw();
 
 });    
@@ -132,6 +126,7 @@ function redraw(){
 }
 #linktable img{
     width:40px;
+    background-color:white;
 }
 #page{
     position:absolute;    

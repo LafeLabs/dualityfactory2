@@ -1,5 +1,11 @@
 [
     "http://lafelabs.org/factory/symbol/svg/svg1539829564.svg",
     "http://localhost:8000/icons/map2link.svg",
-    "https://i.imgur.com/5226cet.png"
+    "https://i.imgur.com/5226cet.png",
+    "https://i.imgur.com/k3dSaBF.jpg",
+    "https://i.imgur.com/83ZTSYr.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/d/d8/Vladimir_Putin_31_December_1999-3.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/56/Donald_Trump_official_portrait.jpg",
+    "https://upload.wikimedia.org/wikipedia/commons/6/67/Maple_leaf_Fcb981.JPG",
+    "https://upload.wikimedia.org/wikipedia/commons/a/aa/Red_maple_leaf.jpg"
 ]
